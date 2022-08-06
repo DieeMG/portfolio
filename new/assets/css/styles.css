@@ -1,7 +1,9 @@
 /* =============================== */
 /*           Google Font           */
 /* =============================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;700&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap'); */
 /* =============================== */
 /*            Variables            */
@@ -33,15 +35,15 @@
 
   /* ----- Font and typography ----- */
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: 'Ubuntu', sans-serif;
+  --body-font: 'Ubuntu mono', sans-serif;
   --biggest-font-size: 1.75rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
-  --tiny-font-size: .625rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .9rem;
+  --smaller-font-size: .8rem;
+  --tiny-font-size: .7rem;
 
   /* --------- Font weight --------- */
   --font-light: 300;
@@ -70,6 +72,11 @@
 /* =============================== */
 /*               Base              */
 /* =============================== */
+
+.font-ubuntu {
+  font-family: 'Ubuntu', monospace!important;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -499,6 +506,8 @@ body.light-theme {
 
 .about__description {
   margin-bottom: 2rem;
+  line-height: 1.2em;
+  text-align: left;
 }
 /* =============================== */
 /*              Skills             */
