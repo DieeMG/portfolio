@@ -238,6 +238,7 @@ body.light-theme {
 }
 
 .section__subtitle {
+  margin-bottom: .2rem;
   display: block;
   font-size: var(--smaller-font-size);
   color: var(--text-color-light);
@@ -574,13 +575,18 @@ body.light-theme {
 
 .services__card {
   background-color: var(--container-color);
-  padding: 3rem 1.5rem;
+  padding: 1.5rem;
   border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .services__title {
   font-size: var(--h3-font-size);
   margin-bottom: 2.5rem;
+  line-height: 1.2;
 }
 
 .services__button {
@@ -1122,12 +1128,12 @@ body.light-theme {
   }
 
   .services__container {
-    grid-template-columns: repeat(3, 192px);
+    grid-template-columns: repeat(4, 192px);
     column-gap: 3rem;
   }
 
   .services__card {
-    padding: 5rem 2rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .work__container {
