@@ -631,7 +631,7 @@ body.light-theme {
 
 .services__modal-title,
 .services__modal-description {
-  text-align: center;
+  text-align: left;
 }
 
 .services__modal-title {
@@ -1062,6 +1062,10 @@ body.light-theme {
     margin-right: auto;
   }
 
+  .work__container {
+    grid-template-columns: repeat(3, max-content);
+  } 
+  
   .section {
     padding: 6.5rem 0 1rem;
   }
