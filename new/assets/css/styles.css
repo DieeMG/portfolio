@@ -643,6 +643,7 @@ body.light-theme {
 .services__modal-description {
   font-size: var(--small-font-size);
   margin-bottom: 2rem;
+  line-height: 1.2;
 }
 
 .services__modal-list {
@@ -652,6 +653,7 @@ body.light-theme {
 
 .services__modal-item {
   display: flex;
+  line-height: 1.2;
   align-items: center;
   column-gap: .5rem;
 }
@@ -1018,7 +1020,7 @@ body.light-theme {
   }
 
   .services__modal-description {
-    padding: 0 3.5rem;
+    padding: 0 2rem;
   }
 
   .work__container {
