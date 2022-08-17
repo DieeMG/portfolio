@@ -353,7 +353,7 @@ body.light-theme {
   font-size: var(--biggest-font-size);
 }
 
-.home__img {
+.home__video {
   width: 160px;
 }
 
@@ -957,7 +957,7 @@ body.light-theme {
     height: 253px;
   }
 
-  .home__img {
+  .home__video {
     width: 130px;
   }
 
@@ -1094,7 +1094,7 @@ body.light-theme {
     height: 400px;
   }
 
-  .home__img {
+  .home__video {
     width: 220px;
   }
 
@@ -1180,7 +1180,7 @@ body.light-theme {
   }
 }
 
-.home__img{
+.home__video{
   width: 100%;
   height: 100%;
   object-fit: cover;
