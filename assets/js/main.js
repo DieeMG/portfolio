@@ -148,20 +148,26 @@ form.onsubmit = (e) => {
     xhr.open('POST', 'actionForm.php' , true);
     xhr.onload = () => {
         if ( xhr.readyState == 4 && xhr.status == 200 ) {
+
             let response = xhr.response;
+
                 if ( response.indexOf('Hubo un problema al enviar el mensaje') != -1 || response.indexOf('Por favor completá todos los campos') != -1 ) {
+                    
                     statusTxt.style.fontStyle = 'normal';
                     statusTxt.style.color = '#dc3545';
                 } else {
+                    
+                    statusTxt.style.fontStyle = 'normal';
+                    statusTxt.style.color = "#198754";
                     form.reset();
                     setTimeout(() => {
                             statusTxt.style.display = "none";
                         }, 3000);
                 }
-            console.log(response);
             
-            statusTxt.style.fontStyle = 'normal';
-            statusTxt.style.color = "#198754";
+            console.log(response);
+
+
             statusTxt.innerText = response;
         }
     }
