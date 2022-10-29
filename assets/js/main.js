@@ -150,6 +150,7 @@ form.onsubmit = (e) => {
         if ( xhr.readyState == 4 && xhr.status == 200 ) {
             let response = xhr.response;
                 if ( response.indexOf('Hubo un problema al enviar el mensaje') != -1 || response.indexOf('Por favor completá todos los campos') != -1 ) {
+                    statusTxt.style.fontStyle = 'normal';
                     statusTxt.style.color = '#dc3545';
                 } else {
                     form.reset();
@@ -158,6 +159,8 @@ form.onsubmit = (e) => {
                         }, 3000);
                 }
             console.log(response);
+            
+            statusTxt.style.fontStyle = 'normal';
             statusTxt.style.color = "#198754";
             statusTxt.innerText = response;
         }
