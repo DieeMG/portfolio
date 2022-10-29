@@ -130,3 +130,21 @@ const sr = ScrollReveal({
 sr.reveal('.home__data')
 sr.reveal('.home__handle', {delay: 700})
 sr.reveal('.home__social, .home__scroll', {delay: 900, origin: 'bottom'})
+
+/* ======================================= */
+/*                Send Form                */
+/* ======================================= */
+
+$(function () {
+	$('form#mainForm').on('submit', function (event) {
+		$.ajax({
+			type: 'post',
+			url: 'actionForm.php',
+			data: $('form').serialize(),
+			success: function (data) {
+			  $("#data").html(data);
+			}
+		});
+		event.preventDefault();
+	});
+});
