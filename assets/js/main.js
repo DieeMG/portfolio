@@ -155,18 +155,20 @@ form.onsubmit = (e) => {
                     
                     statusTxt.style.fontStyle = 'normal';
                     statusTxt.style.color = '#dc3545';
+
                 } else {
                     
                     statusTxt.style.fontStyle = 'normal';
                     statusTxt.style.color = "#198754";
+
                     form.reset();
+                    
                     setTimeout(() => {
                             statusTxt.style.display = "none";
                         }, 3000);
                 }
             
             console.log(response);
-
 
             statusTxt.innerText = response;
         }
