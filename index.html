@@ -47,6 +47,12 @@
         <!-- --------- Favicon ---------- -->
         <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
 
+        <!-- ==================================== -->
+        <!--                jQuery                -->
+        <!-- ==================================== -->
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
     </head>
     <body>
         <header class="header" id="header">
@@ -941,14 +947,14 @@
                     <div class="contact__content">
                         <h3 class="contact__title ">Escribime sobre tu proyecto</h3>
                         
-                        <form action="#" method="post" id="mainForm" class="contact__form">
+                        <form action="#" id="mainForm" class="contact__form">
                             <div class="contact__form-div">
                                 <label for="name" class="contact__form-tag">Nombre y Apellido</label>
                                 <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" class="contact__form-input">
                             </div>
                             <div class="contact__form-div">
                                 <label for="email" class="contact__form-tag">Email</label>
-                                <input type="text" name="email" id="email" placeholder="Ingresa tu email" class="contact__form-input">
+                                <input type="email" name="email" id="email" placeholder="Ingresa tu email" class="contact__form-input">
                             </div>
                             <div class="contact__form-div contact__form-area">
                                 <label for="project" class="contact__form-tag">Proyecto</label>
@@ -958,8 +964,8 @@
                            <div style="text-align: end">
                                 <button type="submit" class="button">Enviar Mensaje</button>
                            </div>
+                           <div class="statusTxt">Mensaje Enviado</div>
                         </form>
-                        <div id="response"></div>
                     </div>
                 </div>
             </section>
@@ -1007,8 +1013,6 @@
         <!-- ------- ScrollReveal ------- -->
         <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.js"></script>
 
-        <!-- -------------- jQuery -------------- -->
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
         <!-- ----------- Main ----------- -->
         <script src="/assets/js/main.js"></script>

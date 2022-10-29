@@ -865,6 +865,18 @@ body.light-theme {
   resize: none;
 }
 
+.statusTxt {
+  display: none;
+  padding: 1em 0;
+
+  transition: all .3s ease-in-out;
+
+  font-weight: bold;
+
+  text-align: center;
+
+  color: #198754;
+}
 
 /* =============================== */
 /*              Footer             */

@@ -135,17 +135,36 @@ sr.reveal('.home__social, .home__scroll', {delay: 900, origin: 'bottom'})
 /*                Send Form                */
 /* ======================================= */
 
-$(document).ready(function() {
-    $('#mainForm').submit(function(e) {
-        e.preventDefault()
+const form = document.querySelector("form"),
+statusTxt = form.querySelector(".statusTxt");
 
-        $.ajax({
-            url: 'actionForm.php',
-            data: $(this).serialize(),
-            method: 'POST',
-            success: function(resp) {
-                $('#response').html(resp);
-            }
-        })
-    })
-})
+form.onsubmit = (e) => {
+
+    e.preventDefault();
+
+    statusTxt.style.color = "#198754";
+    statusTxt.style.display = "block";
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'actionForm.php' , true);
+    xhr.onload = () => {
+        if ( xhr.readyState == 4 && xhr.status == 200 ) {
+            let response = xhr.response;
+                if ( response.indexOf('Hubo un problema al enviar el mensaje') != -1 ) {
+                    statusTxt.style.color = '#dc3545';
+                } else {
+                    form.reset();
+                    setTimeout(() => {
+                            statusTxt.style.display = "none";
+                        }, 3000);
+                }
+            console.log(response);
+            statusTxt.innerText = response;
+        }
+    }
+    let formData = new FormData();
+    xhr.send(formData);
+
+    
+
+}
