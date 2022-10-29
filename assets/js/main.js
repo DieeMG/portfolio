@@ -135,16 +135,17 @@ sr.reveal('.home__social, .home__scroll', {delay: 900, origin: 'bottom'})
 /*                Send Form                */
 /* ======================================= */
 
-$(function () {
-	$('form#mainForm').on('submit', function (event) {
-		$.ajax({
-			type: 'post',
-			url: 'actionForm.php',
-			data: $('form').serialize(),
-			success: function (data) {
-			  $("#data").html(data);
-			}
-		});
-		event.preventDefault();
-	});
-});
+$(document).ready(function() {
+    $('#mainForm').submit(function(e) {
+        e.preventDefault()
+
+        $.ajax({
+            url: 'actionForm.php',
+            data: $(this).serialize(),
+            method: 'POST',
+            success: function(resp) {
+                $('#response').html(resp);
+            }
+        })
+    })
+})

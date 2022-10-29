@@ -17,9 +17,6 @@ if($name == '' || $email == '' || $project == ''){
 	echo "Please fill all fields";
 }else{
     mail($toEmail, $titulo, $msjCorreo, $header);
-	echo "Form Submitted Succesfully. The details are:"."<br><br>";
-	echo "<b>Name:</b> ".$name."<br>";
-	echo "<b>Email:</b> ".$email."<br>";
-	echo "<b>project:</b> ".$project."<br>";
+	echo "Form Submitted Succesfully. The details are:";
 }
 ?>
