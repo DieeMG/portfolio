@@ -163,8 +163,6 @@ form.onsubmit = (e) => {
         }
     }
     let formData = new FormData();
-    xhr.send(formData);
-
-    
+    xhr.send(formData);    
 
 }
