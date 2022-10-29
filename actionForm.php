@@ -3,14 +3,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $project = $_POST['project'];
 
-
 if ( !empty($email) && !empty($name) && !empty($project)) {
-
-
-
-}
-
-if ( $name == '' || $email == '' || $project == '' ) {
     $receiver = 'hola@diegogelvez.ar';
     $subject = "Contacto Web | $name <$email>";
     $sender = 'From: ' . $email;
@@ -22,7 +15,7 @@ if ( $name == '' || $email == '' || $project == '' ) {
     } else {
         echo "Hubo un problema al enviar el mensaje";
     }
-    
+
 } else {
     echo "Por favor completá todos los campos";
 }
