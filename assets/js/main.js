@@ -142,7 +142,6 @@ form.onsubmit = (e) => {
 
     e.preventDefault();
 
-    statusTxt.style.color = "#198754";
     statusTxt.style.display = "block";
 
     let xhr = new XMLHttpRequest();
@@ -159,6 +158,7 @@ form.onsubmit = (e) => {
                         }, 3000);
                 }
             console.log(response);
+            statusTxt.style.color = "#198754";
             statusTxt.innerText = response;
         }
     }
