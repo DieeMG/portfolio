@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form action="post.php" method="POST" id="Myform">
+	<input type="text" name="name" placeholder="Enter name">
+	<input type="text" name="subject" placeholder="Enter subject">
+	<input type="email" name="email" placeholder="Enter email">
+	<textarea name="message" placeholder="Enter your message" rows="3"></textarea>
+	<input name="submit" type="submit" value="Submit">
+</form>
+<div id="data"></div>
+
+<script>
+    $(function () {
+        $('form#Myform').on('submit', function (event) {
+            $.ajax({
+                type: 'post',
+                url: 'post.php',
+                data: $('form').serialize(),
+                success: function (data) {
+                  $("#data").html(data);
+                }
+            });
+            event.preventDefault();
+        });
+    });
+    </script>
+
+<!-- -------------- jQuery -------------- -->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+</body>
+</html>
