@@ -5,7 +5,7 @@ $project = $_POST['project'];
 
 if ( $name == '' || $email == '' || $project == '' ) {
 
-    echo "Please fill all fields";
+    echo "Por favor completá todos los campos";
 
 } else {
 
