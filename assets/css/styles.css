@@ -882,6 +882,19 @@ body.light-theme {
 /*              Footer             */
 /* =============================== */
 
+/* Ocultar reCAPTCHA */
+.grecaptcha-badge { 
+  visibility: hidden;
+}
+
+/* texto badge */
+
+.badge-text, .badge-text a {
+  text-decoration: none;
+  color: #605d5d; /* cambiar a color acorde*/
+  font-size: 0.8rem;
+}
+
 .footer {
   background-color: var(--first-color);
 }
