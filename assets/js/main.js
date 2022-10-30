@@ -135,8 +135,8 @@ sr.reveal('.home__social, .home__scroll', {delay: 900, origin: 'bottom'})
 /*                Send Form                */
 /* ======================================= */
 
-const form = document.querySelector("form"),
-statusTxt = form.querySelector(".statusTxt");
+const form = document.querySelector("form");
+const statusTxt = form.querySelector(".statusTxt");
 
 form.onsubmit = (e) => {
 
@@ -145,7 +145,7 @@ form.onsubmit = (e) => {
     statusTxt.style.display = "block";
 
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'actionForm.php' , true);
+    xhr.open('POST', 'https://diegogelvez.ar/actionForm.php' , true);
     xhr.onload = () => {
         if ( xhr.readyState == 4 && xhr.status == 200 ) {
 
