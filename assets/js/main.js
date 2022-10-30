@@ -145,7 +145,7 @@ form.onsubmit = (e) => {
     statusTxt.style.display = "block";
 
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://diegogelvez.ar/actionForm.php' , true);
+    xhr.open('POST', 'actionForm.php' , true);
     xhr.onload = () => {
         if ( xhr.readyState == 4 && xhr.status == 200 ) {
 
