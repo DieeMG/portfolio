@@ -3,7 +3,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $project = $_POST['project'];
 
-if ( !empty($email) && !empty($name) && !empty($project)) {
+if ( ! $email == '' && ! $name == '' && ! $project == '' ) {
 
     if ( filter_var($email, FILTER_VALIDATE_EMAIL) ) {
 
