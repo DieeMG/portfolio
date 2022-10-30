@@ -190,7 +190,8 @@ form.onsubmit = (e) => {
 /* -------------- reCaptcha -------------- */
 
 grecaptcha.ready( () => {
-    grecaptcha.execute( '6LcWExchAAAAALqiriId33tLAoTOheoeYgNt0g9C', { action:'formulario_principal' } ).then( ( token ) => { 
+    grecaptcha.execute( '6LcWExchAAAAALqiriId33tLAoTOheoeYgNt0g9C', { action:'formulario_principal' } )
+        .then( ( token ) => { 
             const itoken = document.getElementById('token');
             const btn = document.getElementById('submit');
             
