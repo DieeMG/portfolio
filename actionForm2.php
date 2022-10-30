@@ -19,10 +19,9 @@ $score = $json['score'];
 if ( $ok === false && $score < 0.7 ) {
 
     echo "El mensaje no pudo ser enviado";
-    die();
 
 } else {
-    
+
     if ( ! $email == '' && ! $name == '' && ! $project == '' ) {
 
         if ( filter_var($email, FILTER_VALIDATE_EMAIL) ) {
