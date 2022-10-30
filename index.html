@@ -37,13 +37,15 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
 		<link rel="manifest" href="assets/img/favicon/site.webmanifest">
 
-        <!-- ============================ -->
-        <!--             CSS              -->
-        <!-- ============================ -->
+        <!-- --------------- CSS ---------------- -->
 
         <link rel="stylesheet" href="assets/css/styles.css">
         <!-- --------- Boxicons --------- -->
         <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+
+        <!-- ------------- Scripts -------------- -->
+        <script src="https://www.google.com/recaptcha/api.js?render=6LcWExchAAAAALqiriId33tLAoTOheoeYgNt0g9C"></script>
+
 
     </head>
     <body>
@@ -954,7 +956,8 @@
                             </div>
 
                            <div style="text-align: end">
-                                <button type="submit" class="button">Enviar Mensaje</button>
+                                <input type="hidden" name="token" id="token">
+                                <button type="submit" id="submit" class="button" disabled >Enviar Mensaje</button>
                            </div>
                            <div class="statusTxt">Enviando mensaje...</div>
                         </form>
