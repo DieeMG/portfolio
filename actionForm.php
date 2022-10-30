@@ -14,7 +14,7 @@ $json = json_decode($response, true);
 $ok = $json['success'];
 $score = $json['score'];
 
-if ( $ok && $score < 0.7 ) {
+/* if ( $ok && $score < 0.7 ) { */
 
     if ( ! $email == '' && ! $name == '' && ! $project == '' ) {
 
@@ -40,10 +40,10 @@ if ( $ok && $score < 0.7 ) {
         echo "Por favor completá todos los campos";
     }
 
-} else {
+/* } else {
     echo "El mensaje no pudo ser enviado";
 }
-
+ */
 
 
 ?>
