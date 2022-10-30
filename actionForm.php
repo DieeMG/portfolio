@@ -3,7 +3,10 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $project = $_POST['project'];
 
-    if ( !empty($email) && !empty($name) && !empty($project)) {
+if ( !empty($email) && !empty($name) && !empty($project)) {
+
+    if ( filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+
         $receiver = 'hola@diegogelvez.ar';
         $subject = "Contacto Web | $name < $email >";
         $sender = 'From: ' . $email;
@@ -15,8 +18,13 @@ $project = $_POST['project'];
         } else {
             echo "Hubo un problema al enviar el mensaje";
         }
-
+        
     } else {
-        echo "Por favor completá todos los campos";
-    };
+        echo "Por favor ingresá un email valido";
+    }
+
+} else {
+    echo "Por favor completá todos los campos";
+};
+
 ?>

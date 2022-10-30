@@ -151,7 +151,7 @@ form.onsubmit = (e) => {
 
             let response = xhr.response;
 
-                if ( response.indexOf('Hubo un problema al enviar el mensaje') != -1 || response.indexOf('Por favor completá todos los campos') != -1 ) {
+                if ( response.indexOf('Hubo un problema al enviar el mensaje') != -1 || response.indexOf('Por favor completá todos los campos') != -1 || response.indexOf('Por favor ingresá un email valido') != -1 ) {
                     
                     statusTxt.style.fontStyle = 'normal';
                     statusTxt.style.color = '#dc3545';
@@ -162,7 +162,7 @@ form.onsubmit = (e) => {
                     statusTxt.style.color = "#198754";
 
                     form.reset();
-                    
+
                     setTimeout(() => {
                             statusTxt.style.display = "none";
                         }, 3000);
