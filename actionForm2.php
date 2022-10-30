@@ -6,7 +6,7 @@ $email = $_POST['email'];
 $project = $_POST['project'];
 $token = $_POST['token'];
 
-$key = $keys[private];
+$key = $keys['private'];
 $url = 'https://www.google.com/recaptcha/api/siteverify';
 
 $request = "$url?secret=$key&response=$token";
@@ -16,38 +16,41 @@ $json = json_decode($response, true);
 $ok = $json['success'];
 $score = $json['score'];
 
-if ( $ok === false && $score < 0.7 ) {
+if ( $ok === false ) {
 
     echo "El mensaje no pudo ser enviado";
+    die();
 
-} else {
+} 
 
-    if ( ! $email == '' && ! $name == '' && ! $project == '' ) {
-
-        if ( filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+if (  $score < 0.7 ) {
     
-            $receiver = 'hola@diegogelvez.ar';
-            $subject = "Contacto Web | $name < $email >";
-            $sender = 'From: ' . $email;
-            
-            $body = "Contacto desde Home diegogelvez.ar \n\nNombre: $name\nE-Mail: $email\n\nProyecto: $project\n";
-            
-            if ( mail($receiver, $subject, $body, $sender) ) {
-                echo "Mensaje enviado correctamente";
-            } else {
-                echo "Hubo un problema al enviar el mensaje";
-            }
-            
+    echo "El mensaje no pudo ser enviado";
+    die();
+}
+        
+if ( ! $email == '' && ! $name == '' && ! $project == '' ) {
+
+    if ( filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+
+        $receiver = 'hola@diegogelvez.ar';
+        $subject = "Contacto Web | $name < $email >";
+        $sender = 'From: ' . $email;
+        
+        $body = "Contacto desde Home diegogelvez.ar \n\nNombre: $name\nE-Mail: $email\n\nProyecto: $project\n";
+        
+        if ( mail($receiver, $subject, $body, $sender) ) {
+            echo "Mensaje enviado correctamente";
         } else {
-            echo "Por favor ingresá un email valido";
+            echo "Hubo un problema al enviar el mensaje";
         }
-    
+        
     } else {
-        echo "Por favor completá todos los campos";
+        echo "Por favor ingresá un email valido";
     }
 
+} else {
+    echo "Por favor completá todos los campos";
 }
-       
-
 
 ?>
