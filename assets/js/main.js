@@ -168,8 +168,6 @@ form.onsubmit = (e) => {
                         }, 3000);
                 }
             
-            console.log(response);
-
             statusTxt.innerText = response;
         }
     }
