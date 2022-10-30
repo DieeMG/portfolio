@@ -14,7 +14,7 @@ $json = json_decode($response, true);
 $ok = $json['success'];
 $score = $json['score'];
 
-if ( $ok && $score < 0.7 ) {
+if ( $score < 0.7 ) {
 
     if ( ! $email == '' && ! $name == '' && ! $project == '' ) {
 
