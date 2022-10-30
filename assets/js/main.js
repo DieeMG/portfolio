@@ -197,7 +197,6 @@ grecaptcha.ready( () => {
             
             itoken.value = token;
             btn.disabled = false;
-            console.log({token})
         })
 });
 
