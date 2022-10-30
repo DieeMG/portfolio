@@ -173,7 +173,7 @@ form.onsubmit = (e) => {
             statusTxt.innerText = response;
         }
     }
-    let formData = new FormData();
+    let formData = new FormData(form);
     xhr.send(formData);    
 
 }
