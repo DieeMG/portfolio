@@ -1,8 +1,34 @@
 <?php
+include ("assets/keys.php");
+
 $name = $_POST['name'];
 $email = $_POST['email'];
 $project = $_POST['project'];
+$token = $_POST['token'];
 
+$key = $keys['private'];
+$url = 'https://www.google.com/recaptcha/api/siteverify';
+
+$request = "$url?secret=$key&response=$token";
+$response = file_get_contents( $request );
+
+$json = json_decode($response, true);
+$ok = $json['success'];
+$score = $json['score'];
+
+if ( $ok === false ) {
+
+    echo "El mensaje no pudo ser enviado";
+    die();
+
+} 
+
+if (  $score < 0.7 ) {
+    
+    echo "El mensaje no pudo ser enviado";
+    die();
+}
+        
 if ( ! $email == '' && ! $name == '' && ! $project == '' ) {
 
     if ( filter_var($email, FILTER_VALIDATE_EMAIL) ) {
@@ -25,6 +51,6 @@ if ( ! $email == '' && ! $name == '' && ! $project == '' ) {
 
 } else {
     echo "Por favor completá todos los campos";
-};
+}
 
 ?>

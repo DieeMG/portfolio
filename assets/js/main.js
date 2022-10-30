@@ -145,7 +145,7 @@ form.onsubmit = (e) => {
     statusTxt.style.display = "block"; //Mostrar mensaje al enviar form
 
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'actionForm2.php' , true);
+    xhr.open('POST', 'actionForm.php' , true);
     xhr.onload = () => {
 
         if ( xhr.readyState == 4 && xhr.status == 200 ) {
