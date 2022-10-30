@@ -142,36 +142,41 @@ form.onsubmit = (e) => {
 
     e.preventDefault();
 
-    statusTxt.style.display = "block";
+    statusTxt.style.display = "block"; //Mostrar mensaje al enviar form
 
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'actionForm.php' , true);
     xhr.onload = () => {
+
         if ( xhr.readyState == 4 && xhr.status == 200 ) {
 
             let response = xhr.response;
 
                 if ( response.indexOf('Hubo un problema al enviar el mensaje') != -1 || response.indexOf('Por favor completá todos los campos') != -1 || response.indexOf('Por favor ingresá un email valido') != -1 ) {
-                    
+                    //Modificación para mensajes de error
                     statusTxt.style.fontStyle = 'normal';
                     statusTxt.style.color = '#dc3545';
 
                 } else {
-                    
+                    //Modificación para correcto
                     statusTxt.style.fontStyle = 'normal';
                     statusTxt.style.color = "#198754";
 
                     form.reset();
 
                     setTimeout(() => {
+                            //Ocultar nuevamente mensaje
                             statusTxt.style.display = "none";
                         }, 3000);
                 }
             
             statusTxt.innerText = response;
         }
+
     }
-    let formData = new FormData(form);
+
+    let formData = new FormData(form); //Creación de objeto que enviamos
+
     xhr.send(formData);    
 
 }
