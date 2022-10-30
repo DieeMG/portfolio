@@ -189,7 +189,7 @@ form.onsubmit = (e) => {
 
 /* -------------- reCaptcha -------------- */
 
-grecaptcha.ready( () => {
+/* grecaptcha.ready( () => {
     grecaptcha.execute( '6LcWExchAAAAALqiriId33tLAoTOheoeYgNt0g9C', { action:'Formulario Principal' } ).then( ( token ) => { 
             const itoken = document.getElementById('token');
             const btn = document.getElementById('submit');
@@ -200,3 +200,4 @@ grecaptcha.ready( () => {
         })
 });
 
+ */
