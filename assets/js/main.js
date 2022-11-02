@@ -135,6 +135,28 @@ sr.reveal('.home__social, .home__scroll', {delay: 900, origin: 'bottom'})
 /*                Send Form                */
 /* ======================================= */
 
+/* -------------- reCaptcha -------------- */
+
+grecaptcha.ready( () => {
+    getToken();
+});
+
+const getToken = () => {
+
+    grecaptcha.execute( '6LcWExchAAAAALqiriId33tLAoTOheoeYgNt0g9C', { action:'formulario_principal' } )
+        .then( ( token ) => { 
+            const itoken = document.getElementById('token');
+            const btn = document.getElementById('submit');
+            
+            itoken.value = token;
+            btn.disabled = false;
+            console.log(token);
+        })
+
+};
+
+/* -------------- reCaptcha -------------- */
+
 const form = document.querySelector("form");
 const statusTxt = form.querySelector(".statusTxt");
 
@@ -162,6 +184,7 @@ form.onsubmit = (e) => {
                     //Modificación para mensajes de error
                     statusTxt.style.fontStyle = 'normal';
                     statusTxt.style.color = '#dc3545';
+                    getToken();
 
                 } else {
                     //Modificación para correcto
@@ -169,6 +192,7 @@ form.onsubmit = (e) => {
                     statusTxt.style.color = "#198754";
 
                     form.reset();
+                    getToken();
 
                     setTimeout(() => {
                             //Ocultar nuevamente mensaje
@@ -186,17 +210,3 @@ form.onsubmit = (e) => {
     xhr.send(formData);    
 
 }
-
-/* -------------- reCaptcha -------------- */
-
-grecaptcha.ready( () => {
-    grecaptcha.execute( '6LcWExchAAAAALqiriId33tLAoTOheoeYgNt0g9C', { action:'formulario_principal' } )
-        .then( ( token ) => { 
-            const itoken = document.getElementById('token');
-            const btn = document.getElementById('submit');
-            
-            itoken.value = token;
-            btn.disabled = false;
-        })
-});
-
