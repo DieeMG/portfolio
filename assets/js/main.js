@@ -150,7 +150,6 @@ const getToken = () => {
             
             itoken.value = token;
             btn.disabled = false;
-            console.log(token);
         })
 
 };
