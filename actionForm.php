@@ -1,10 +1,5 @@
-
 <?php
 include ("assets/keys.php");
-use PHPMailer\PHPMailer\PHPMailer;
-
-$mail = new PHPMailer;
-$mail->isSMTP();
 
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -40,28 +35,14 @@ if ( ! $email == '' && ! $name == '' && ! $project == '' ) {
 
         $receiver = 'hola@diegogelvez.ar';
         $subject = "Contacto Web | $name < $email >";
+        $sender = 'From: ' . $email;
         
         $body = "Contacto desde Home diegogelvez.ar \n\nNombre: $name\nE-Mail: $email\n\nProyecto: $project\n";
         
-        $mail->Host = 'smtp.hostinger.com';
-        $mail->Port = 587;
-        $mail->SMTPAuth = true;
-        $mail->Username = $receiver;
-        $mail->Password = 'U*hV$^$5rHMb';
-        
-        $mail->setFrom($receiver);
-        $mail->addAddress($email, $name);
-        
-        if ($mail->addReplyTo($email, $name)) {
-        
-            $mail->Subject = $subject;
-            $mail->Body = $body;
-        
-            if (!$mail->send()) {
-                echo "Hubo un problema al enviar el mensaje";
-            } else {
-                echo "Mensaje enviado correctamente";
-            }
+        if ( mail($receiver, $subject, $body, $sender) ) {
+            echo "Mensaje enviado correctamente";
+        } else {
+            echo "Hubo un problema al enviar el mensaje";
         }
         
     } else {
