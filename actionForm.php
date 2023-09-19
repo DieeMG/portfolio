@@ -1,5 +1,6 @@
 <?php
 include ("assets/keys.php");
+require_once 'config.php'; 
 
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -18,14 +19,14 @@ $score = $json['score'];
 
 if ( $ok === false ) {
 
-    echo "El mensaje no pudo ser enviado";
+    echo $lang['email_response_spam'];
     die();
 
 } 
 
 if (  $score < 0.7 ) {
     
-    echo "El mensaje no pudo ser enviado";
+    echo $lang['email_response_spam'];
     die();
 }
         
@@ -40,17 +41,17 @@ if ( ! $email == '' && ! $name == '' && ! $project == '' ) {
         $body = "Contacto desde Home diegogelvez.ar \n\nNombre: $name\nE-Mail: $email\n\nProyecto: $project\n";
         
         if ( mail($receiver, $subject, $body, $sender) ) {
-            echo "Mensaje enviado correctamente";
+            echo $lang['email_response_ok'];;
         } else {
-            echo "Hubo un problema al enviar el mensaje";
+            echo $lang['email_response_bad'];;
         }
         
     } else {
-        echo "Por favor ingresá un email valido";
+        echo $lang['email_response_email'];;
     }
 
 } else {
-    echo "Por favor completá todos los campos";
+    echo $lang['email_response_all'];;
 }
 
 ?>

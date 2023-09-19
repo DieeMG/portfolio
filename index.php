@@ -1,5 +1,7 @@
+<?php require_once 'config.php'; ?>
+
 <!DOCTYPE html>
-    <html lang="es">
+    <html lang="<?= $user_language; ?>">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-E832WFFML3"></script>
@@ -14,36 +16,30 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="title" content="Diego Gelvez - Portfolio">
-        <meta name="description" content="Hola, soy Diego, este es mi Portfolio, aquí podrás ver algunos de mis trabajos y contactarme para que juntos podamos resolver tus necesidades.">
+        <meta name="description" content="<?= $lang['meta_description']; ?>">
         <meta name="keywords" content="frontend, developer, wordpress, elementor, html, css, javascript, android, devacid, bootstrap,strapword">
         <meta name="robots" content="index, follow">
-        <meta name="language" content="Spanish">
+        <meta name="language" content="<?= $lang['meta_language']; ?>">
         <meta name="author" content="Diego Gelvez">
         <meta property="og:url" content="https://diegogelvez.ar" />
         <meta property="og:locale" content="es_AR" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Diego Gelvez - Portfolio" />
-        <meta property="og:description" content="Hola, soy Diego, este es mi Portfolio, aquí podrás ver algunos de mis trabajos y contactarme para que juntos podamos resolver tus necesidades." />
+        <meta property="og:description" content="<?= $lang['meta_description']; ?>" />
         <meta property="og:image" content="https://diegogelvez.ar/assets/img/favicon/android-chrome-512x512.png" />
-        <meta name="twitter:card" content="Hola, soy Diego, este es mi Portfolio, aquí podrás ver algunos de mis trabajos y contactarme para que juntos podamos resolver tus necesidades." />
+        <meta name="twitter:card" content="<?= $lang['meta_description']; ?>" />
         <meta name="twitter:site" content="@DieeMG" />
         <meta name="twitter:creator" content="@DieeMG" />
         <title>Diego Gelvez - Portfolio</title>
-        
-        <!-- --------- Favicon ---------- -->
-        
+                
 		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
 		<link rel="manifest" href="assets/img/favicon/site.webmanifest">
 
-        <!-- --------------- CSS ---------------- -->
-
         <link rel="stylesheet" href="assets/css/styles.css">
-        <!-- --------- Boxicons --------- -->
         <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
 
-        <!-- ------------- Scripts -------------- -->
         <script src="https://www.google.com/recaptcha/api.js?render=6LcWExchAAAAALqiriId33tLAoTOheoeYgNt0g9C"></script>
 
 
@@ -81,24 +77,21 @@
                         </li>
                     </ul>
                 </div>
-                <!-- ----- Dark Mode Button ----- -->
                 <i class='bx bx-moon change-theme' id="theme-button" ></i>
             </nav>
         </header>
 
-        <!--=============== MAIN ===============-->
         <main class="main">
-            <!--=============== HOME ===============-->
             <section class="home section" id="home">
                 <div class="home__container container grid">
                     <div class="home__data">
-                        <span class="honme__greeting">Hola, Soy</span>
+                        <span class="honme__greeting"><?= $lang['gretting']; ?></span>
                         <h1 class="home__name">Diego Gelvez</h1>
                         <h3 class="home__education">Frontend Developer</h3>
 
                         <div class="home__buttons">
-                            <a download="" href="assets/pdf/cv-diego-gelvez.pdf" id="DownloadCV" class="button button--ghost">Descargar CV</a>
-                            <a href="#about" class="button">Sobre Mi</a>
+                            <a download="" href="<?= $lang['btn_download_url']; ?>" id="DownloadCV" class="button button--ghost"><?= $lang['btn_download']; ?></a>
+                            <a href="#about" class="button"><?= $lang['btn_about']; ?></a>
                         </div>
                     </div>
                     <div class="home__handle">
@@ -124,47 +117,45 @@
                 </div>
             </section>
             
-            <!--=============== ABOUT ===============-->
             <section class="about section" id="about">
                 <span class="section__subtitle">Intro</span>
-                <h2 class="section__title">Sobre Mi</h2>
+                <h2 class="section__title"><?= $lang['title_about']; ?></h2>
                 <div class="about__container container grid">
                     <img src="/assets/img/about.webp" alt="" class="about__img">
                     <div class="about__data">
                         <div class="about__info">
                             <div class="about__box">
                                 <i class='bx bx-award about__icon'></i>
-                                <h3 class="about__title">Experiencia</h3>
-                                <span class="about__subtitle">+2 años trabajando</span>
+                                <h3 class="about__title"><?= $lang['box_experience_title']; ?></h3>
+                                <span class="about__subtitle"><?= $lang['box_experience_subtitle']; ?></span>
                             </div>
                             <div class="about__box">
                                 <i class='bx bx-briefcase about__icon' ></i>
-                                <h3 class="about__title">Completados</h3>
-                                <span class="about__subtitle">+30 proyectos</span>
+                                <h3 class="about__title"><?= $lang['box_projects_title']; ?></h3>
+                                <span class="about__subtitle"><?= $lang['box_projects_subtitle']; ?></span>
                             </div>
                             <div class="about__box">
                                 <i class='bx bx-support about__icon' ></i>
-                                <h3 class="about__title">Disponibiliad</h3>
-                                <span class="about__subtitle">Online 24/7</span>
+                                <h3 class="about__title"><?= $lang['box_availability_title']; ?></h3>
+                                <span class="about__subtitle"><?= $lang['box_availability_subtitle']; ?></span>
                             </div>
                         </div>
                         <p class="about__description ">
-                            Hola, soy Diego. Actualmente trabajo como Desarrollador Web en Grupo Nods, tambien realizo trabajos freelance. Mi objetivo actual es seguir capacitandome en este campo, con preferencia en la rama de aplicaciones moviles.
+                            <?= $lang['about_1p']; ?>
                         </p>
                         <p class="about__description ">
-                            En el pasado he realizado algunas apps para Android utilizando distintos templates. Tengo conocimientos de instalación, configuración y uso de WordPress.
+                            <?= $lang['about_2p']; ?>
                         </p>
                         <div style="text-align: end">
-                            <a href="#contact" class="button">Contactame</a>
+                            <a href="#contact" class="button"><?= $lang['btn_contact']; ?></a>
                         </div>    
                     </div>
                 </div>
             </section>
 
-            <!--=============== SKILLS ===============-->
             <section class="skills section" id="skills">
-                <span class="section__subtitle">Estos son</span>
-                <h2 class="section__title">Mis conocimientos</h2>
+                <span class="section__subtitle"><?= $lang['knowledge_subtitle']; ?></span>
+                <h2 class="section__title"><?= $lang['knowledge_title']; ?></h2>
                 
                 <div class="skills__container container grid">
                     <div class="skills__content">
@@ -176,21 +167,21 @@
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">HTML</h3>
-                                        <span class="skills__level">Avanzado</span> 
+                                        <span class="skills__level"><?= $lang['level_advanced']; ?></span> 
                                     </div>
                                 </div>
                                 <div class="skills__data">
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">CSS</h3>
-                                        <span class="skills__level">Avanzado</span> 
+                                        <span class="skills__level"><?= $lang['level_advanced']; ?></span> 
                                     </div>
                                 </div>
                                 <div class="skills__data">
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">JavaScript</h3>
-                                        <span class="skills__level">Intermedio</span> 
+                                        <span class="skills__level"><?= $lang['level_intermediate']; ?></span> 
                                     </div>
                                 </div>
                             </div>
@@ -199,28 +190,28 @@
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">Bootstrap</h3>
-                                        <span class="skills__level">Avanzado</span> 
+                                        <span class="skills__level"><?= $lang['level_advanced']; ?></span> 
                                     </div>
                                 </div>
                                 <div class="skills__data">
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">Elementor</h3>
-                                        <span class="skills__level">Avanzado</span> 
+                                        <span class="skills__level"><?= $lang['level_advanced']; ?></span> 
                                     </div>
                                 </div>
                                 <div class="skills__data">
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">WordPress</h3>
-                                        <span class="skills__level">Avanzado</span> 
+                                        <span class="skills__level"><?= $lang['level_advanced']; ?></span> 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="skills__content">
-                        <h3 class="skills__title">Otros</h3>
+                        <h3 class="skills__title"><?= $lang['other_title']; ?></h3>
 
                         <div class="skills__box" >
                             <div class="skills__group">
@@ -228,21 +219,21 @@
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">PHP</h3>
-                                        <span class="skills__level">Intermedio</span> 
+                                        <span class="skills__level"><?= $lang['level_intermediate']; ?></span> 
                                     </div>    
                                 </div>
                                 <div class="skills__data">
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">React</h3>
-                                        <span class="skills__level">Basico+</span> 
+                                        <span class="skills__level"><?= $lang['level_basic']; ?></span> 
                                     </div>
                                 </div>
                                 <div class="skills__data">
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">GitHub</h3>
-                                        <span class="skills__level">Intermedio</span> 
+                                        <span class="skills__level"><?= $lang['level_intermediate']; ?></span> 
                                     </div>    
                                 </div>
                             </div>
@@ -251,21 +242,21 @@
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">MySQL</h3>
-                                        <span class="skills__level">Basico+</span> 
+                                        <span class="skills__level"><?= $lang['level_intermediate']; ?></span> 
                                     </div>    
                                 </div>
                                 <div class="skills__data">
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">Photoshop</h3>
-                                        <span class="skills__level">Intermedio</span> 
+                                        <span class="skills__level"><?= $lang['level_intermediate']; ?></span> 
                                     </div>
                                 </div>
                                 <div class="skills__data">
                                     <i class="bx bxs-badge-check"></i>
                                     <div>
                                         <h3 class="skills__name">Servidores</h3>
-                                        <span class="skills__level">Basico+</span> 
+                                        <span class="skills__level"><?= $lang['level_intermediate']; ?></span> 
                                     </div>    
                                 </div>
                             </div>
@@ -274,44 +265,43 @@
                 </div>
             </section>
 
-            <!--=============== SERVICES ===============-->
             <section class="services section">
-                <span class="section__subtitle">Estos son los servicios</span>
-                <h2 class="section__title">Que ofrezco</h2>
+                <span class="section__subtitle"><?= $lang['service_subtitle']; ?></span>
+                <h2 class="section__title"><?= $lang['service_title']; ?></h2>
 
                 <div class="services__container container grid">
                     <div class="services__card">
-                        <h3 class="services__title">Maquetado web</h3>
+                        <h3 class="services__title"><?= $lang['service_title_1']; ?></h3>
 
                         <span class="services__button">
-                            Ver mas <i class='bx bx-right-arrow-alt services__icon'></i>
+                            <?= $lang['service_btn']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                         </span>
 
                         <div class="services__modal">
                             <div class="services__modal-content">
                                 <i class='bx bx-x services__modal-close'></i>
 
-                                <h3 class="services__modal-title">Maquetado web</h3>
+                                <h3 class="services__modal-title"><?= $lang['service_title_1']; ?></h3>
 
-                                <p class="services__modal-description">Vos traes el diseño de tu sitio y yo me encargo de volverlo realidad. Puede ser desde una landing page hasta un sitio completo.</p>
+                                <p class="services__modal-description"><?= $lang['service_desc_1']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Sitio realizado en WordPress.
+                                            <?= $lang['service_list_1a']; ?>
                                         </p>
                                     </li>
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Asesoramiento sobre el uso basico de la plataforma.
+                                            <?= $lang['service_list_1b']; ?>
                                         </p>
                                     </li>
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Posicionamiento SEO inicial.
+                                            <?= $lang['service_list_1c']; ?>
                                         </p>
                                     </li>
                                 </ul>
@@ -319,37 +309,37 @@
                         </div>
                     </div>
                     <div class="services__card">
-                        <h3 class="services__title">Desarrollo completo de sitios web</h3>
+                        <h3 class="services__title"><?= $lang['service_title_2']; ?></h3>
 
                         <span class="services__button">
-                            Ver mas <i class='bx bx-right-arrow-alt services__icon'></i>
+                            <?= $lang['service_btn']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                         </span>
 
                         <div class="services__modal">
                             <div class="services__modal-content">
                                 <i class='bx bx-x services__modal-close'></i>
 
-                                <h3 class="services__modal-title">Desarrollo completo web</h3>
+                                <h3 class="services__modal-title"><?= $lang['service_title_2']; ?></h3>
 
-                                <p class="services__modal-description">Juntos creamos el diseño del sitio y luego me encargo de la creación del mismo.  Puede ser desde una landing page hasta un sitio completo.</p>
+                                <p class="services__modal-description"><?= $lang['service_desc_2']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Sitio realizado en WordPress.
+                                            <?= $lang['service_list_2a']; ?>
                                         </p>
                                     </li>
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Asesoramiento sobre el uso basico de la plataforma.
+                                            <?= $lang['service_list_2b']; ?>
                                         </p>
                                     </li>
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Posicionamiento SEO inicial.
+                                            <?= $lang['service_list_2c']; ?>
                                         </p>
                                     </li>
                                 </ul>
@@ -357,43 +347,43 @@
                         </div>
                     </div>
                     <div class="services__card">
-                        <h3 class="services__title">Desarrollo de E-commerce</h3>
+                        <h3 class="services__title"><?= $lang['service_title_3']; ?></h3>
 
                         <span class="services__button">
-                            Ver mas <i class='bx bx-right-arrow-alt services__icon'></i>
+                            <?= $lang['service_btn']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                         </span>
 
                         <div class="services__modal">
                             <div class="services__modal-content">
                                 <i class='bx bx-x services__modal-close'></i>
 
-                                <h3 class="services__modal-title">Desarrollo de E-commerce</h3>
+                                <h3 class="services__modal-title"><?= $lang['service_title_3']; ?></h3>
 
-                                <p class="services__modal-description">Si queres un E-commerce, podes traer el diseñó o lo creamos juntos, y luego me encargo de llevarlo a la realidad.</p>
+                                <p class="services__modal-description"><?= $lang['service_desc_3']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Sitio realizado en WordPress y WooCommerce.
+                                            <?= $lang['service_list_3a']; ?>
                                         </p>
                                     </li>
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Se pueden agregar las principales pasarelas de pago y servicios de logistica.
+                                            <?= $lang['service_list_3b']; ?>
                                         </p>
                                     </li>
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Asesoramiento sobre el uso basico de la plataforma.
+                                            <?= $lang['service_list_3c']; ?>
                                         </p>
                                     </li>
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Posicionamiento SEO inicial.
+                                            <?= $lang['service_list_3d']; ?>
                                         </p>
                                     </li>
                                 </ul>
@@ -401,37 +391,37 @@
                         </div>
                     </div>
                     <div class="services__card">
-                        <h3 class="services__title">Mantenimiento a sitios web</h3>
+                        <h3 class="services__title"><?= $lang['service_title_4']; ?></h3>
 
                         <span class="services__button">
-                            Ver mas <i class='bx bx-right-arrow-alt services__icon'></i>
+                            <?= $lang['service_btn']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                         </span>
 
                         <div class="services__modal">
                             <div class="services__modal-content">
                                 <i class='bx bx-x services__modal-close'></i>
 
-                                <h3 class="services__modal-title">Mantenimiento a sitios web</h3>
+                                <h3 class="services__modal-title"><?= $lang['service_title_4']; ?></h3>
 
-                                <p class="services__modal-description">Puedo actualizar la información que me pidas de tu sitio o mantenerlo actualizado para evitar problemas de seguridad. Entre otras cosas.</p>
+                                <p class="services__modal-description"><?= $lang['service_desc_4']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Actualización de banners e información del sitio
+                                            <?= $lang['service_list_4a']; ?>
                                         </p>
                                     </li>
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Actualizacion de plugins
+                                            <?= $lang['service_list_4b']; ?>
                                         </p>
                                     </li>
                                     <li class="services__modal-item">
                                         <i class="bx bx-check services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            Solución a otros problemas.
+                                            <?= $lang['service_list_4c']; ?>
                                         </p>
                                     </li>
                                 </ul>
@@ -440,20 +430,17 @@
                     </div>
                 </div>
             </section>
-
-            <!--=============== WORK ===============-->
             <section class="work section" id="work">
-                <span class="section__subtitle">Estos son algunos de</span>
+                <span class="section__subtitle"><?= $lang['portfolio_subtitle']; ?></span>
 
-                <h2 class="section__title">Mis trabajos recientes</h2>
+                <h2 class="section__title"><?= $lang['portfolio_title']; ?></h2>
 
                 <div class="work__filters">
-                    <span class="work__item active-work" data-filter='all' >Todos</span>
-                    <span class="work__item" data-filter='.android' >Apps Android</span>
-                    <span class="work__item" data-filter='.elementor' >Elementor</span>
-                    <span class="work__item" data-filter='.web' >WordPress Theme</span>
-                    <span class="work__item" data-filter='.otros' >Otros</span>
-                    <!-- <span class="work__item" data-filter='.design' >Design</span> -->
+                    <span class="work__item active-work" data-filter='all' ><?= $lang['portfolio_btn_all']; ?></span>
+                    <span class="work__item" data-filter='.android' ><?= $lang['portfolio_btn_android']; ?></span>
+                    <span class="work__item" data-filter='.elementor' ><?= $lang['portfolio_btn_elementor']; ?></span>
+                    <span class="work__item" data-filter='.web' ><?= $lang['portfolio_btn_wordpress']; ?></span>
+                    <span class="work__item" data-filter='.otros' ><?= $lang['portfolio_btn_otros']; ?></span>
                 </div>
 
                 <div class="work__container container grid">
@@ -463,10 +450,10 @@
                         <h3 class="work__title">Paseo Libertad</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://paseolibertad.com.ar/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div><i class="bi bi-info-circle"></i>
                         <div class="services__modal">
@@ -475,7 +462,7 @@
 
                                 <h3 class="services__modal-title">Paseo Libertad</h3>
 
-                                <p class="services__modal-description">Rediseño del sitio de Paseo Libertad, incluye Home y desarrollo de sitios dedicados a cada Paseo.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_paseo_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -503,22 +490,22 @@
                     <div class="work__card mix web">
                         <img src="/assets/img/betos.webp" loading="lazy" alt="Betos 2022" class="work__img">
 
-                        <h3 class="work__title">Betos 2022</h3>
+                        <h3 class="work__title">Betos</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://betos.com.ar/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div>
                         <div class="services__modal">
                             <div class="services__modal-content">
                                 <i class='bx bx-x services__modal-close'></i>
 
-                                <h3 class="services__modal-title">Betos 2022</h3>
+                                <h3 class="services__modal-title">Betos</h3>
 
-                                <p class="services__modal-description">Actualizacion de la estetica del sitio</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_betos_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -537,10 +524,10 @@
                         <h3 class="work__title">Punto Ceramico</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://puntoceramico.com.ar/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div>
                         <div class="services__modal">
@@ -549,7 +536,7 @@
 
                                 <h3 class="services__modal-title">Punto Ceramico</h3>
 
-                                <p class="services__modal-description">Sitio creado para Punto Ceramico.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_pc_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -568,10 +555,10 @@
                         <h3 class="work__title">IDK Store</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://idkstore.com.ar/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div>
                         <div class="services__modal">
@@ -580,7 +567,7 @@
 
                                 <h3 class="services__modal-title">IDK Store</h3>
 
-                                <p class="services__modal-description">Sitio E-commerce realizado con Elementor Pro, utilizando las nuevas features de Elementor como Container y Loop Builder. Actualmente utilizado como demo.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_idk_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -611,10 +598,10 @@
                         <h3 class="work__title">Saint Michel SRL</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://saintmichelsrl.com.ar/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div>
                         <div class="services__modal">
@@ -623,7 +610,7 @@
 
                                 <h3 class="services__modal-title">Saint Michel SRL</h3>
 
-                                <p class="services__modal-description">Creación del sitio nuevo para la clinica Saint Michel.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_sm_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -642,10 +629,10 @@
                         <h3 class="work__title">MII UC</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://miiuc.cl/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div>
                         <div class="services__modal">
@@ -654,7 +641,7 @@
 
                                 <h3 class="services__modal-title">MII UC</h3>
 
-                                <p class="services__modal-description">Se realizo un trabajo de actualización de plantilla utilizando Elementor donde se recreo el diseño anterior.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_miiuc_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -679,10 +666,10 @@
                         <h3 class="work__title">Gestore</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://gestore.com.ar/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div>
                         <div class="services__modal">
@@ -691,7 +678,7 @@
 
                                 <h3 class="services__modal-title">Gestore</h3>
 
-                                <p class="services__modal-description">Sitio realizado integramente con Elementor y Slider Revolution.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_gestore_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -716,11 +703,8 @@
                         <h3 class="work__title">Tarifario Galaxy Vacations 2022</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
-                            <!-- <a href="https://tarifario.galaxyvacations.com/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
-                            </a> -->
                         </div>
                         <div class="services__modal">
                             <div class="services__modal-content">
@@ -728,7 +712,7 @@
 
                                 <h3 class="services__modal-title">Tarifario Galaxy Vacations 2022</h3>
 
-                                <p class="services__modal-description">Sitio creado en Elementor donde se incluyen las tarifas de los distintos paquetes y experiencias que vende la empresa.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_galaxy_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -747,10 +731,10 @@
                         <h3 class="work__title">Fun Wise</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://funwiseonline.com/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div>
                         <div class="services__modal">
@@ -759,7 +743,7 @@
 
                                 <h3 class="services__modal-title">Fun Wise</h3>
 
-                                <p class="services__modal-description">Sitio One Page y landing realizadas en Elementor.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_funwise_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -784,10 +768,10 @@
                         <h3 class="work__title">ECOíndice</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://ecoindice.ml/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div>
                         <div class="services__modal">
@@ -796,7 +780,7 @@
 
                                 <h3 class="services__modal-title">ECOíndice</h3>
 
-                                <p class="services__modal-description">Sitio realizado para calcular el Índice que se necesitaba para poder cursar distintas materias en la Facultad de Ciencias Económicas - Universidad Nacional de Córdoba.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_ecoindice_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -814,13 +798,13 @@
                                     <li class="services__modal-item">
                                         <i class="bx bx-link-external services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            <a href="https://ecoindice.ml/old" target="_blank" rel="noopener noreferrer">Versión anterior</a>
+                                            <a href="https://ecoindice.ml/old" target="_blank" rel="noopener noreferrer"><?= $lang['portfolio_ecoindice_old']; ?></a>
                                         </p>
                                     </li>
                                     <li class="services__modal-item">
                                         <i class="bx bxl-play-store services__modal-icon"></i>
                                         <p class="services__modal-info">
-                                            <a href="https://play.google.com/store/apps/details?id=com.devacid.ecoindice" target="_blank" rel="noopener noreferrer">Disponible en Google Play</a>
+                                            <a href="https://play.google.com/store/apps/details?id=com.devacid.ecoindice" target="_blank" rel="noopener noreferrer"><?= $lang['portfolio_ecoindice_google_play']; ?></a>
                                         </p>
                                     </li>
                                 </ul>
@@ -833,10 +817,10 @@
                         <h3 class="work__title">Instituto Ferrini</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://iferrinipanama.edu.pa" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div>
                         <div class="services__modal">
@@ -845,7 +829,7 @@
 
                                 <h3 class="services__modal-title">Instituto Ferrini</h3>
 
-                                <p class="services__modal-description">Creación del sitio para Instituo Ferrini utilizando Elementor Pro y distintos custom post types.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_ferrini_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -870,10 +854,10 @@
                         <h3 class="work__title">Integralis</h3>
                         <div style="display:flex; gap: 1em;">
                             <span class="services__button">
-                                Sobre el trabajo <i class='bx bx-right-arrow-alt services__icon'></i>
+                                <?= $lang['portfolio_btn_about_work']; ?> <i class='bx bx-right-arrow-alt services__icon'></i>
                             </span>
                             <a href="https://centrointegralis.com.ar/" target="_blank" rel="noopener noreferrer" class="work__button">
-                                Enlace <i class="bx bx-right-arrow-alt work__icon"></i>
+                                <?= $lang['portfolio_btn_link']; ?> <i class="bx bx-right-arrow-alt work__icon"></i>
                             </a>
                         </div>
                         <div class="services__modal">
@@ -882,7 +866,7 @@
 
                                 <h3 class="services__modal-title">Centro Integralis</h3>
 
-                                <p class="services__modal-description">Sitio creado para el Centro Integralis.</p>
+                                <p class="services__modal-description"><?= $lang['portfolio_integralis_desc']; ?></p>
 
                                 <ul class="services__modal-list">
                                     <li class="services__modal-item">
@@ -899,19 +883,13 @@
                 </div>
             </section>
 
-            <!--=============== TESTIMONIALS ===============-->
-            <!-- <section class="testimonial section">
-                
-            </section> -->
-
-            <!--=============== CONTACT ===============-->
             <section class="contact section" id="contact">
-                <span class="section__subtitle">Estemos en</span>
-                <h2 class="section__title">Contacto</h2>
+                <span class="section__subtitle"><?= $lang['contact_subtitle']; ?></span>
+                <h2 class="section__title"><?= $lang['contact_title']; ?></h2>
 
                 <div class="contact__container container grid">
-                    <div class="contact__content">
-                        <h3 class="contact__title ">Encontrame en </h3>
+                    <div class="contact__content" style="margin: auto;">
+                        <!-- <h3 class="contact__title "><?= $lang['contact_sidebar_title']; ?></h3> -->
 
                         <div class="contact__info">
                             <div class="contact__card icon-foward">
@@ -920,7 +898,7 @@
                                 <span class="contact__card-data">hola@diegogelvez.ar</span>
                                 
                                 <a href="mailto:hola@diegogelvez.ar" target="_blank" rel="noopener noreferrer" id="emailLink" class="contact__button ">
-                                    Escribime <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+                                    <?= $lang['contact_write_btn']; ?> <i class="bx bx-right-arrow-alt contact__button-icon"></i>
                                 </a>
                             </div>
                             <div class="contact__card icon-foward">
@@ -929,7 +907,7 @@
                                 <span class="contact__card-data">+54 9 351 2 146 724</span>
                                 
                                 <a href="http://wa.me/+5493512146724" target="_blank" rel="noopener noreferrer" id="Whatsapp" class="contact__button">
-                                    Escribime <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+                                    <?= $lang['contact_write_btn']; ?> <i class="bx bx-right-arrow-alt contact__button-icon"></i>
                                 </a>
                             </div>
                             <div class="contact__card icon-foward">
@@ -938,49 +916,43 @@
                                 <span class="contact__card-data">DieeMG</span>
                                 
                                 <a href="http://m.me/dieemg" target="_blank" rel="noopener noreferrer" id="fbMessenger" class="contact__button">
-                                    Escribime <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+                                    <?= $lang['contact_write_btn']; ?> <i class="bx bx-right-arrow-alt contact__button-icon"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="contact__content">
-                        <h3 class="contact__title ">Escribime sobre tu proyecto</h3>
+                        <h3 class="contact__title "><?= $lang['contact_form_title']; ?></h3>
                         
                         <form action="#" id="mainForm" name="mainForm" class="contact__form">
                             <div class="contact__form-div">
-                                <label for="name" class="contact__form-tag">Nombre y Apellido</label>
-                                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" class="contact__form-input">
+                                <label for="name" class="contact__form-tag"><?= $lang['contact_form_name']; ?></label>
+                                <input type="text" name="name" id="name" placeholder="<?= $lang['contact_form_name_placeholder']; ?>" class="contact__form-input">
                             </div>
                             <div class="contact__form-div">
-                                <label for="email" class="contact__form-tag">Email</label>
-                                <input type="email" name="email" id="email" placeholder="Ingresa tu email" class="contact__form-input">
+                                <label for="email" class="contact__form-tag"><?= $lang['contact_form_email']; ?></label>
+                                <input type="email" name="email" id="email" placeholder="<?= $lang['contact_form_email_placeholder']; ?>" class="contact__form-input">
                             </div>
                             <div class="contact__form-div contact__form-area">
-                                <label for="project" class="contact__form-tag">Proyecto</label>
-                                <textarea name="project" id="project" cols="30" rows="10" placeholder="Describe tu proyecto" class="contact__form-input"></textarea>
+                                <label for="project" class="contact__form-tag"><?= $lang['contact_form_project']; ?></label>
+                                <textarea name="project" id="project" cols="30" rows="10" placeholder="<?= $lang['contact_form_project_placeholder']; ?>" class="contact__form-input"></textarea>
                             </div>
 
                            <div style="text-align: end">
                                 <input type="hidden" name="token" id="token">
-                                <button type="submit" id="submit" class="button" disabled >Enviar Mensaje</button>
+                                <button type="submit" id="submit" class="button" disabled ><?= $lang['contact_form_btn']; ?></button>
                            </div>
-                           <div class="statusTxt">Enviando mensaje...</div>
+                           <div class="statusTxt"><?= $lang['contact_form_sending']; ?></div>
                         </form>
                     </div>
                 </div>
             </section>
         </main>
 
-        <!--=============== FOOTER ===============-->
         <footer class="footer">
             <div class="footer__container container">
                 <h1 class="footer__title">Diego Gelvez</h1>
-
-                <!-- <ul class="footer__list">
-                    <li><a href="#about" class="footer__link">Aboout</a></li>
-                    <li><a href="#work" class="footer__link">Projects</a></li>
-                </ul> -->
 
                 <ul class="footer__social">
                     <li>
@@ -1001,21 +973,12 @@
                 </ul>
 
                 <span class="footer__copy">
-                    &copy; 2022 - Desarrollado por <a href="http://devacid.xyz" id="devAcid" target="_blank" rel="noopener noreferrer"><strong><span style="color: #0b111e;">devAcid</span></strong></a>
+                    &copy; <?= date("Y"); ?> - <?= $lang['developed_by']; ?> <a href="http://devacid.xyz" id="devAcid" target="_blank" rel="noopener noreferrer"><strong><span style="color: #0b111e;">devAcid</span></strong></a>
                 </span>
             </div>
         </footer>
-        <!-- ============================ -->
-        <!--           Scripts            -->
-        <!-- ============================ -->
-
-        <!-- ---------- Filter ---------- -->
         <script src="https://unpkg.com/mixitup@3.3.1/dist/mixitup.js"></script>
-        <!-- ------- ScrollReveal ------- -->
         <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.js"></script>
-
-
-        <!-- ----------- Main ----------- -->
         <script src="/assets/js/main.js"></script>
     </body>
 </html>

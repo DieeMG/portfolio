@@ -173,13 +173,13 @@ form.onsubmit = (e) => {
 
             let response = xhr.response;
 
-                if ( response.indexOf('El mensaje no pudo ser enviado') != -1 ) {
+                if ( response.indexOf('El mensaje no pudo ser enviado') != -1 || response.indexOf('The message could not be sent') != -1) {
 
                     //Modificación para mensajes de error
                     statusTxt.style.fontStyle = 'normal';
                     statusTxt.style.color = '#fd7e14';
 
-                } else if ( response.indexOf('Hubo un problema al enviar el mensaje') != -1 || response.indexOf('Por favor completá todos los campos') != -1 || response.indexOf('Por favor ingresá un email valido') != -1 ) {
+                } else if ( response.indexOf('Hubo un problema al enviar el mensaje') != -1 || response.indexOf('Por favor completá todos los campos') != -1 || response.indexOf('Por favor ingresá un email valido') != -1 || response.indexOf('There was a problem sending the message') != -1 || response.indexOf('Please fill out all fields') != -1 || response.indexOf('Please enter a valid email') != -1) {
                     //Modificación para mensajes de error
                     statusTxt.style.fontStyle = 'normal';
                     statusTxt.style.color = '#dc3545';
